@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <title>Post Your Blog</title>
+    <style type="text/css">
+      .label {text-align: right}
+      .error {color: red}
+    </style>
+
+  </head>
+
+  <body>
+    <h2>Post Your Blog</h2>
+    <form method="post">
+      <table>
+        <tr>
+          <td class="label">
+            subject
+          </td>
+          <td>
+            <input type="text" name="subject" value="{{subject}}">
+          </td>
+        </tr>
+
+        <tr>
+          <td class="label">
+            blog
+          </td>
+          <td>
+            <textarea name="content" rows="13" cols="75" value="{{content}}"></textarea>
+          </td>
+          <td class="error">
+            {{error}}
+          </td>
+        </tr>
+
+      </table>
+
+      <input type="submit">
+    </form>
+  </body>
+
+</html>

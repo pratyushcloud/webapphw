@@ -1,0 +1,50 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <link type="text/css" rel="stylesheet" href="/static/main.css" />
+<title>My Wiki</title>
+
+</head>
+
+<body>
+  <a href="/wiki" class="main-title">
+    Wiki
+  </a>
+
+  <div class="login-area">
+      {% if user %}
+      		<a class = "edit" href="/wiki/_edit{{wikiurl}}">edit</a>
+	        |
+	        {%set viewurl1 = wikiurl %}
+			{%if viewurl1 =='/' %}
+			{%set viewurl1 = ''%}
+			{%endif%}
+	        <a class = "view" href="/wiki{{viewurl1}}">view</a>
+	        |
+	        {{user}} (<a class="login-link" href="/wiki/logout">logout</a>)
+   {% else %}
+	        <a class="login-link" href="/wiki/login">login</a>
+	        |
+	        <a class="login-link" href="/wiki/signup">signup</a>
+    {% endif %}
+</div>
+<table class = "label">
+{% for n in range(length-1, -1, -1)%}
+<tr>
+<td>	{{wikiversions[n]}} </td>
+{%set viewurl = wikiurl %}
+{%if viewurl =='/' %}
+{%set viewurl = ''%}
+{%endif%}
+<td> <a class = "view" href="/wiki{{viewurl}}/?v={{n+1}}">view</a> </td>
+<td>|</td>
+<td> <a class = "edit" href="/wiki/_edit{{wikiurl}}">edit</a> </td-->
+</tr>
+<br>
+{% endfor %}
+</table>
+
+</body>
+
+</html>

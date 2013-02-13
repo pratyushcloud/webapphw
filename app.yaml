@@ -1,0 +1,100 @@
+application: pratyushcloud
+version: 1
+runtime: python27
+api_version: 1
+threadsafe: true
+
+handlers:
+- url: /
+  script: pratyushcloud.app
+
+- url: /rot13
+  script: pratyushcloud.app
+  
+- url: /signup
+  script: pratyushcloud.app
+  
+- url: /welcome
+  script: pratyushcloud.app
+
+- url: /blog
+  script: pratyushcloud.app
+  
+- url: /blog/flush
+  script: pratyushcloud.app
+    
+- url: /blog/newpost
+  script: pratyushcloud.app
+
+- url: /blog/([0-9]+)
+  script: pratyushcloud.app
+
+- url: /blog/signup
+  script: pratyushcloud.app
+  
+- url: /blog/welcome
+  script: pratyushcloud.app
+
+- url: /blog/login
+  script: pratyushcloud.app
+
+
+- url: /blog/.json
+  script: pratyushcloud.app
+
+
+- url: /blog/([0-9]+).json
+  script: pratyushcloud.app
+  
+- url: /blog/logout
+  script: pratyushcloud.app
+  
+  
+- url: /wiki/signup
+  script: pratyushcloud.app
+  
+- url: /wiki/logout
+  script: pratyushcloud.app
+
+- url: /wiki/login
+  script: pratyushcloud.app
+
+- url: /wiki/_edit(/(?:[a-zA-Z0-9_-]+/?)*)
+  script: pratyushcloud.app
+
+- url: /wiki/_history(/(?:[a-zA-Z0-9_-]+/?)*)
+  script: pratyushcloud.app
+  
+- url: /wiki(/(?:[a-zA-Z0-9_-]+/?)*)
+  script: pratyushcloud.app 
+
+- url: /wiki
+  script: pratyushcloud.app 
+
+- url: /jobc
+  script: pratyushcloud.app
+
+- url: /jobc/inviteonly/
+  script: pratyushcloud.app
+
+- url: /jobc/home
+  script: pratyushcloud.app
+
+- url: /jobc/realjd(/(?:[a-zA-Z0-9_-]+/?)*)
+  script: pratyushcloud.app
+
+- url: /jobc/_edit/realjd(/(?:[a-zA-Z0-9_-]+/?)*)
+  script: pratyushcloud.app
+
+- url: /static
+  static_dir: static
+  
+#- url: /hellotemplate
+#  script: pratyushcloud.app
+  
+#- url: /sign
+#  script: pratyushcloud.app
+
+libraries:
+- name: jinja2
+  version: latest
